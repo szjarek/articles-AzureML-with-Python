@@ -1,0 +1,16 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code:
+  local_path: code/train
+
+command: python train-and-register-xgboost-model.py --data ${{inputs.mnist_data}}
+
+environment: azureml:AzureML-lightgbm-3.2-ubuntu18.04-py37-cpu:12
+
+compute: azureml:aml-comp-cpu-01
+
+inputs:
+  mnist_data: 
+     dataset: azureml:mnist-dataset:1
+     mode: ro_mount
+
+experiment_name: my-mnist-experiment

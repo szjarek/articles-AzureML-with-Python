@@ -1,0 +1,17 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code:
+  local_path: code/train
+
+command: python train.py --data ${{inputs.mnist_data}}
+
+environment: azureml:AzureML-pytorch-1.9-ubuntu18.04-py37-cuda11-gpu:10
+
+compute: azureml:aml-comp-cpu-01
+environment_variables:
+  AZUREML_COMPUTE_USE_COMMON_RUNTIME: "false"
+inputs:
+  mnist_data: 
+     dataset: azureml:mnist-dataset:1
+     mode: ro_mount
+
+experiment_name: pytorch-mnist-experiment

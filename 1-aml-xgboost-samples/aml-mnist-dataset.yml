@@ -1,0 +1,4 @@
+$schema: https://azuremlschemas.azureedge.net/latest/dataset.schema.json
+name: mnist-dataset
+version: 1
+local_path: datasets/mnist-data
