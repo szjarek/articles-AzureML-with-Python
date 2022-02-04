@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+name: mnistxgboep
+auth_mode: key
+
+# RUN WITH:
+# $ az ml online-endpoint create --file /Users/jarek/_Documents.Private/ContentLab/211101_AML_Toolkit/src/1_xgboost_vscode/aml-endpoint.yml --subscription aa0c9c06-de93-4fbf-a84b-642425935e77 --resource-group jsaml --workspace-name jsaml001

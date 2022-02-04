@@ -140,3 +140,9 @@ cython_debug/
 # macOS
 .DS_Store
 
+# Project files
+.azure/
+*.xgb_model
+*.pt_model
+*.h5
+

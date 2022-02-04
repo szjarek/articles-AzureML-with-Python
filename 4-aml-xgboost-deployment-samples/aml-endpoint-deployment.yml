@@ -1,0 +1,15 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: mnistxgboep
+model: azureml:mnist-xgb-model:1
+code_configuration:
+  code: 
+    local_path: ./endpoint-code
+  scoring_script: aml-score.py
+  
+environment: 
+  conda_file: ./endpoint-code/aml-env.yml
+  image: mcr.microsoft.com/azureml/minimal-ubuntu18.04-py37-cpu-inference:latest
+  
+instance_type: Standard_F2s_v2
+instance_count: 1
