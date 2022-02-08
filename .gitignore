@@ -145,4 +145,4 @@ cython_debug/
 *.xgb_model
 *.pt_model
 *.h5
-
+*.ignore.sh
