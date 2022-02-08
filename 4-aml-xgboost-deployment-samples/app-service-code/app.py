@@ -14,12 +14,9 @@ def get_inference_model():
                         resource_group="azureml-rg",
                         workspace_name="demo-ws",
                         auth=auth)
+                        
         aml_model = Model(ws, 'mnist-xgb-model', version=1)
-        print(f"MODEL: {aml_model}")
-
         model_path = aml_model.download(target_dir='.', exist_ok=True)
-        print(f"MODEL PATH: {model_path}")
-
         model = InferenceModel(model_path)
     
     return model
