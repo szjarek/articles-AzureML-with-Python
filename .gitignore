@@ -140,7 +140,20 @@ cython_debug/
 # macOS
 .DS_Store
 
+# Azure Functions artifacts
+bin
+obj
+appsettings.json
+local.settings.json
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+.python_packages
+
 # Project files
+.vscode/
 .azure/
 *.xgb_model
 *.pt_model
