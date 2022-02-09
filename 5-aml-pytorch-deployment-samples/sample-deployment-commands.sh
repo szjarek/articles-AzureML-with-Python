@@ -30,7 +30,7 @@ az webapp up --name $APP_NAME --plan $APP_SERVICE_PLAN --sku B2 --os-type Linux 
 cd ..
 
 # Update application configuration to use FastAPI-compatible workers (it may take a few minutes before the application restarts and settings are applied)
-$ az webapp config set --name $APP_NAME --startup-file "gunicorn --workers=2 --worker-class uvicorn.workers.UvicornWorker main:app" --resource-group $RESOURCE_GROUP 
+az webapp config set --name $APP_NAME --startup-file "gunicorn --workers=2 --worker-class uvicorn.workers.UvicornWorker main:app" --resource-group $RESOURCE_GROUP 
 
 # Assign system identity to the created application
 PRINCIPAL_ID=$(az webapp identity assign --name $APP_NAME --resource-group $RESOURCE_GROUP --output tsv --query "principalId") 

@@ -35,10 +35,9 @@ class InferenceModel():
         # Reshape the image and convert it to monochrome
         image = image.resize((28,28)).convert('L')
 
-        # Normalize data (we need to invert image, as training dataset images were inverted)
+        # Normalize the data (we need to invert the image, as training dataset images were inverted)
         image_np = (255 - np.array(image.getdata())) / 255.0
 
-        # Return image data reshaped to a shape expected by model
         return torch.tensor(image_np).float().to(self.device)
 
     def predict(self, image_bytes):
