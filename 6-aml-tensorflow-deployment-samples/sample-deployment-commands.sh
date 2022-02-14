@@ -21,7 +21,7 @@ az ml model create --name "mnist-tf-model" --local-path "./mnist-tf-model.h5" --
 # = AML Online Endpoint  =
 # ========================
 
-export ENDPOINT_NAME="<your-endpoint-name>" # NOTE: Globally unique name (it will be part of the URI)
+ENDPOINT_NAME="<your-endpoint-name>" # NOTE: Globally unique name (it will be part of the URI)
 
 # 2. Create AML Endpoint and Deployment
 az ml online-endpoint create -n $ENDPOINT_NAME -f aml-endpoint.yml --subscription $AZURE_SUBSCRIPTION --resource-group $RESOURCE_GROUP --workspace-name $AML_WORKSPACE 
